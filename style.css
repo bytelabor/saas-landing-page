@@ -633,3 +633,153 @@ section:first-of-type {
     font-size: 0.875rem;
     color: var(--clr-text-muted);
 }
+
+/* === PRICING === */
+.pricing {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+/* Section Header */
+.pricing__header {
+    text-align: center;
+    margin-bottom: var(--sp-64);
+}
+
+.pricing__title {
+    font-family: var(--ff-heading);
+    font-weight: var(--fw-bold);
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    letter-spacing: -0.02em;
+    color: var(--clr-text);
+    margin-bottom: var(--sp-16);
+}
+
+.pricing__subtitle {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    color: var(--clr-text-muted);
+}
+
+/* Card Grid */
+.pricing__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--sp-24);
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+/* Individual Card */
+.pricing-card {
+    position: relative;
+    background-color: #111;
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-48) var(--sp-32);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+/* Pro Card – Highlighted */
+.pricing-card--pro {
+    border: 2px solid var(--clr-primary);
+    box-shadow: 0 0 40px rgba(99, 102, 241, 0.15);
+}
+
+/* Badge – Default */
+.pricing-card__badge {
+    display: inline-block;
+    font-size: 0.8125rem;
+    font-weight: var(--fw-semi);
+    color: var(--clr-text-muted);
+    background-color: rgba(255, 255, 255, 0.06);
+    padding: var(--sp-4) var(--sp-16);
+    border-radius: 100px;
+    margin-bottom: var(--sp-24);
+}
+
+/* Badge – Pro (Empfohlen) */
+.pricing-card__badge--pro {
+    position: absolute;
+    top: -14px;
+    right: var(--sp-24);
+    color: var(--clr-text);
+    background-color: var(--clr-primary);
+    margin-bottom: 0;
+}
+
+/* Price */
+.pricing-card__price {
+    display: flex;
+    align-items: baseline;
+    gap: var(--sp-8);
+    margin-bottom: var(--sp-32);
+}
+
+.pricing-card__amount {
+    font-family: var(--ff-heading);
+    font-weight: var(--fw-extra);
+    font-size: clamp(2.5rem, 5vw, 3.25rem);
+    color: var(--clr-text);
+    letter-spacing: -0.02em;
+}
+
+.pricing-card__period {
+    font-size: 1rem;
+    color: var(--clr-text-muted);
+}
+
+/* Feature List */
+.pricing-card__features {
+    width: 100%;
+    margin-bottom: var(--sp-32);
+}
+
+.pricing-card__feature {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-12);
+    padding: var(--sp-12) 0;
+    border-bottom: 1px solid var(--clr-border);
+    font-size: 0.9375rem;
+    color: var(--clr-text);
+    text-align: left;
+}
+
+.pricing-card__feature:last-child {
+    border-bottom: none;
+}
+
+/* Checkmark Icon */
+.icon-check {
+    color: var(--clr-primary);
+    flex-shrink: 0;
+}
+
+/* Cross Icon – Disabled Feature */
+.icon-cross {
+    color: #475569;
+    flex-shrink: 0;
+}
+
+.pricing-card__feature--disabled {
+    color: #475569;
+}
+
+/* CTA Button */
+.pricing-card__cta {
+    width: 100%;
+    margin-top: auto;
+}
+
+/* === PRICING – DESKTOP (768px+) === */
+@media (min-width: 768px) {
+    .pricing__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--sp-32);
+        max-width: 760px;
+    }
+}
