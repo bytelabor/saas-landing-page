@@ -783,3 +783,120 @@ section:first-of-type {
         max-width: 760px;
     }
 }
+
+/* === FOOTER === */
+.footer {
+    background-color: #050505;
+    padding: var(--sp-64) var(--sp-24) var(--sp-32);
+}
+
+.footer__container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.footer__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--sp-48);
+    margin-bottom: var(--sp-48);
+}
+
+/* Brand Column */
+.footer__brand {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-12);
+}
+
+.footer__tagline {
+    font-size: 0.9375rem;
+    color: var(--clr-text-muted);
+}
+
+/* Link Columns */
+.footer__heading {
+    font-family: var(--ff-heading);
+    font-weight: var(--fw-semi);
+    font-size: 0.875rem;
+    color: var(--clr-text);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: var(--sp-16);
+}
+
+.footer__links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-12);
+}
+
+.footer__link {
+    font-size: 0.9375rem;
+    color: var(--clr-text-muted);
+    transition: color var(--transition);
+}
+
+.footer__link:hover {
+    color: var(--clr-text);
+}
+
+/* Bottom Bar */
+.footer__bottom {
+    border-top: 1px solid var(--clr-border);
+    padding-top: var(--sp-24);
+    text-align: center;
+}
+
+.footer__copyright {
+    font-size: 0.8125rem;
+    color: var(--clr-text-muted);
+}
+
+/* === FOOTER – DESKTOP (768px+) === */
+@media (min-width: 768px) {
+    .footer__grid {
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: var(--sp-64);
+    }
+}
+
+/* === SCROLLED NAVIGATION === */
+.nav.scrolled {
+    background-color: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+/* === ANIMATIONS === */
+
+/* Initial hidden state for scroll-reveal elements */
+.feature-card,
+.pricing-card,
+.testimonial__card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Stagger feature cards */
+.feature-card:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.feature-card:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+/* Stagger pricing cards */
+.pricing-card:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+/* Visible state (added by JS Intersection Observer) */
+.feature-card.visible,
+.pricing-card.visible,
+.testimonial__card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
