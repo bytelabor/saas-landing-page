@@ -532,3 +532,104 @@ section:first-of-type {
         gap: var(--sp-32);
     }
 }
+
+/* === TESTIMONIAL === */
+.testimonial {
+    background-color: #0f0f0f;
+}
+
+.testimonial__container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.testimonial__card {
+    position: relative;
+    max-width: 720px;
+    text-align: center;
+    padding: var(--sp-48) var(--sp-24);
+}
+
+/* Decorative Quote Mark */
+.testimonial__card::before {
+    content: '\201E';
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--ff-heading);
+    font-size: 8rem;
+    line-height: 1;
+    color: var(--clr-primary);
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Star Rating */
+.testimonial__stars {
+    display: flex;
+    justify-content: center;
+    gap: var(--sp-4);
+    margin-bottom: var(--sp-24);
+    color: var(--clr-primary);
+    position: relative;
+    z-index: 1;
+}
+
+/* Blockquote */
+.testimonial__quote {
+    font-size: clamp(1.0625rem, 2.5vw, 1.25rem);
+    font-style: italic;
+    line-height: 1.8;
+    color: #cbd5e1;
+    margin-bottom: var(--sp-32);
+    position: relative;
+    z-index: 1;
+}
+
+/* Author Row */
+.testimonial__author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--sp-16);
+    position: relative;
+    z-index: 1;
+}
+
+/* Avatar Circle */
+.testimonial__avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: var(--clr-primary);
+    color: var(--clr-text);
+    font-family: var(--ff-heading);
+    font-weight: var(--fw-bold);
+    font-size: 1.125rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    letter-spacing: 0.02em;
+}
+
+/* Author Info */
+.testimonial__info {
+    text-align: left;
+}
+
+.testimonial__name {
+    font-weight: var(--fw-semi);
+    font-size: 1rem;
+    color: var(--clr-text);
+    margin-bottom: var(--sp-4);
+}
+
+.testimonial__role {
+    font-size: 0.875rem;
+    color: var(--clr-text-muted);
+}
